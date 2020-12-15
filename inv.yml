@@ -1,0 +1,9 @@
+---
+all:
+  children:
+    routers:
+      hosts:
+        NP:
+          ansible_host: 10.139.99.254
+        TXMC:
+          ansible_host: 10.197.99.1
