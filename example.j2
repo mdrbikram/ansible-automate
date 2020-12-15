@@ -1,0 +1,5 @@
+{% for item in snap %}
+  {% if item.startswith('Device') %}
+    {{ item }}
+  {% endif %}
+{% endfor %}

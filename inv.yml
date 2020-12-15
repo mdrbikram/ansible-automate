@@ -1,0 +1,29 @@
+---
+all:
+  children:
+    routers:
+      hosts:
+        NP:
+          ansible_host: 10.139.99.254
+        MNBT:
+          ansible_host: 10.137.99.1
+        VARC:
+          ansible_host: 10.140.99.1
+        UTEP:
+          ansible_host: 10.136.99.1
+        UTDP:
+          ansible_host: 10.132.99.1
+        ARRG:
+          ansible_host: 10.192.99.1
+        PABH:
+          ansible_host: 10.199.99.1
+        NCHV:
+          ansible_host: 10.204.99.1
+        GAAT:
+          ansible_host: 10.207.99.1
+        TXMC:
+          ansible_host: 10.197.99.1
+        PUNE:
+          ansible_host: 10.202.99.1
+        HYD:
+          ansible_host: 10.201.99.1

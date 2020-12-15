@@ -1,0 +1,30 @@
+---
+
+- name: General Config
+
+  hosts: routers
+  connection: network_cli
+
+  tasks:
+  - name: create file
+    file:
+      dest: outputs/dump
+      state: touch
+    delegate_to: localhost
+
+  - name: show version
+
+    ios_command:
+      commands: show cdp neighbor detail
+
+    register: output
+
+  - set_fact:
+      snap: "{{ output.stdout[0] | devip }}"
+
+
+  - name: copy line
+    lineinfile:
+      path: outputs/dump
+      line: "{{inventory_hostname}},{{item.key}},{{item.value['ipaddr']}},{{item.value.platform}}"
+    with_dict: "{{snap}}"
